@@ -14,6 +14,6 @@ class DeliveriesController < ApplicationController
 	private
 	
 	def params
-		params.permit(:initial_value, :final_value, :reason)
+		params.permit(:order_id, :delivery_partner, :delivery_status_id, :cancellation_id)
 	end
 end

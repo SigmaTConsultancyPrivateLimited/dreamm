@@ -5,5 +5,5 @@ class User < ApplicationRecord
 	has_one :return
 	has_many :orders
 	has_many :deliveries
-	# has_many :cancellation
+	has_many :cancellations
 end
