@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
    
-
+   # resources :order_mailer
    
 # product
    get "products/get_product", to: "products#index" , as: :index 

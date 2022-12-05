@@ -1,4 +1,4 @@
 class ProductDiscount < ApplicationRecord
-	belongs_to :product
-	belongs_to :discount
+	belongs_to :product, optional: true
+	belongs_to :discount, optional: true
 end

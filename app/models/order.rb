@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-	belongs_to :cart
+	belongs_to :cart, optional: true
 	has_one :order_detail
 	has_one :payment
 	has_one :delivery

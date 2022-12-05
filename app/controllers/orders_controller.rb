@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+	 skip_before_action :verify_authenticity_token
 	def get_order
 		@data=ProductInformation::OrderService.get_order
 		render :json =>  @data
@@ -17,7 +18,8 @@ class OrdersController < ApplicationController
 	end
 
 	def create_order
-		@data = ProductInformation::OrderService.create_order(params)
+		byebug
+		@data = ProductInformation::OrderService.create_order(order_params)
 		if @data.save
 			puts "Saved"
 		end
@@ -29,7 +31,8 @@ class OrdersController < ApplicationController
 
 	private
 	
-	def params
-		params.permit(:user_id, :total, :cart_id, :payment_id, :quantity)
+	def order_params
+		byebug
+		params.require(:order).permit(:user_id, :total, :cart_id, :payment_id, :quantity)
 	end
 end

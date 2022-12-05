@@ -17,6 +17,7 @@ class PaymentsController < ApplicationController
 	end
 
 	def create_payment
+		byebug
 		@data = ProductInformation::PaymentService.create_payment(params)
 		if @data.save
 			puts "Saved"
